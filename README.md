@@ -37,12 +37,22 @@ Then, install Flux in your cluster (replace YOURUSER with your GitHub username):
     --git-url=git@github.com:${GHUSER}/Gitops-FluxCD \
     --git-branch=master \
     --git-path=deploy-k8s \
-    --sync-interval 2m \
-    --sync-garbage-collection true \
     --namespace=springboot | kubectl apply -f -
+  Edit Deployment file
+  
+    kubectl edit deploy flux -n springboot
+    
+    Add "--sync-garbage-collection"
+    -----------------------------------
+    - args:
+      - --memcached-service=
+      - --sync-garbage-collection=true    
+    -----------------------------------
+  ![image](https://user-images.githubusercontent.com/58024415/108061521-75d4c280-707e-11eb-897e-63c186f6d5a0.png)
+
   Wait for Flux to start:
   
-      kubectl -n springboot rollout status deployment/flux
+    kubectl -n springboot rollout status deployment/flux
       
   Check if Flux deployment is successful or not:
   
