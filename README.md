@@ -34,10 +34,10 @@ Then, install Flux in your cluster (replace YOURUSER with your GitHub username):
     fluxctl install \
     --git-user=${GHUSER} \
     --git-email=${GHUSER}@users.noreply.github.com \
-    --git-url=git@github.com:${GHUSER}/GitOps-NodeJs-CD \
+    --git-url=git@github.com:${GHUSER}/Gitops-FluxCD \
     --git-branch=master \
-    --git-path=deploy \
-    --namespace=nodejsdeploy | kubectl apply -f -
+    --git-path=deploy-k8s \
+    --namespace=springboot | kubectl apply -f -
   Wait for Flux to start:
   
       kubectl -n springboot rollout status deployment/flux
