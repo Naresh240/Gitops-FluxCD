@@ -46,7 +46,7 @@ Then, install Flux in your cluster (replace YOURUSER with your GitHub username):
   
     kubectl get deploy -n springboot
     
-  ![image](https://user-images.githubusercontent.com/58024415/101141082-cb7dff00-3639-11eb-9d15-f6a1ea351391.png)
+  ![image](https://user-images.githubusercontent.com/58024415/108053154-0d341880-7073-11eb-8844-8937f07ba4f2.png)
     
   Authorise Flux CD to Connect to Your Git Repository:
   
@@ -58,21 +58,16 @@ Then, install Flux in your cluster (replace YOURUSER with your GitHub username):
     
   In order to sync your cluster state with git you need to copy the public key and create a deploy key with write access on your GitHub repository.
   Open GitHub Repo --> settings --> Deploy Keys
-  Add public key inside Deploy Keys
+  Add public key inside Deploy Keys, Click on Allow write access check box and then click on Add Key 
   
-  ![image](https://user-images.githubusercontent.com/58024415/101140750-632f1d80-3639-11eb-81cb-62df35a35db0.png)
-
-  Click on Allow write access check box and then click on Add Key    
-  
-  ![image](https://user-images.githubusercontent.com/58024415/101140439-fa47a580-3638-11eb-9905-797908298fc2.png)
+  ![image](https://user-images.githubusercontent.com/58024415/108053303-3f457a80-7073-11eb-8465-77e750efe8c2.png)
 
   By default, Flux git pull frequency is set to 5 minutes. You can tell Flux to sync the changes immediately with:
   
     fluxctl sync --k8s-fwd-ns springboot
-   
-  ![image](https://user-images.githubusercontent.com/58024415/101141524-6b3b8d00-363a-11eb-9745-8cdc10927991.png)
+  
+  ![image](https://user-images.githubusercontent.com/58024415/108053429-6ac86500-7073-11eb-88cb-a42e71967f09.png)
   
   Now check wether deployment done in cluster or not:
   
-  ![image](https://user-images.githubusercontent.com/58024415/101142457-9ecae700-363b-11eb-8c5e-d14a680aa7aa.png)
-  
+  ![image](https://user-images.githubusercontent.com/58024415/108053527-87fd3380-7073-11eb-927f-b2789613ff4e.png)  
