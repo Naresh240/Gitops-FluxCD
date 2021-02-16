@@ -37,6 +37,8 @@ Then, install Flux in your cluster (replace YOURUSER with your GitHub username):
     --git-url=git@github.com:${GHUSER}/Gitops-FluxCD \
     --git-branch=master \
     --git-path=deploy-k8s \
+    --sync-interval 2m \
+    --sync-garbage-collection true \
     --namespace=springboot | kubectl apply -f -
   Wait for Flux to start:
   
